@@ -1,62 +1,48 @@
 # Preparación para el Examen General de EDP
 
-Colección de notebooks para estudiar el temario oficial del Examen General de
-Ecuaciones Diferenciales Parciales.
+Ruta compacta, alineada con el temario oficial y con los exámenes generales
+de 2023-1, 2023-2, 2025-1, 2025-2 y 2026-1.
 
-## Cómo usar este repositorio
+## Empieza aquí
 
-1. Empieza por [el plan de estudio](PLAN_ESTUDIO_GENERAL.md).
-2. Consulta la [matriz de cobertura](MATRIZ_COBERTURA_TEMARIO.md).
-3. Estudia los notebooks canónicos de cada bloque.
-4. Resuelve primero los ejercicios normales.
-5. Deja los problemas **GENERAL - VARIACIÓN** para la segunda vuelta.
+Para preparar el General estudia únicamente [`GENERAL/`](GENERAL/README.md).
+Esa carpeta contiene la colección canónica:
 
-## Bloques
+- **26 notebooks**: uno por subsección del temario;
+- **52 ejercicios normales**: exactamente dos por notebook;
+- **8 problemas tipo General**: sólo en núcleos de alta recurrencia;
+- teoría esencial, ejemplo guiado e interpretación geométrica o física.
 
-- [`LINEALES/`](LINEALES/): transporte, características, conservación,
-  entropía y problemas de Riemann.
-- [`ONDA/`](ONDA/): d'Alembert, dependencia, fronteras, Duhamel, Huygens,
-  descenso de Hadamard y energía.
-- [`lAPLACE/`](lAPLACE/): Poisson-Laplace, funciones armónicas, máximo,
-  Green, Dirichlet, Perron, energía y espectro.
-- [`calor/`](calor/): núcleo, máximo, Duhamel, regularidad, problemas de
-  frontera y series de Fourier.
+Las carpetas [`LINEALES/`](LINEALES/), [`ONDA/`](ONDA/),
+[`lAPLACE/`](lAPLACE/) y [`calor/`](calor/) se conservan como biblioteca
+extendida y fuente de animaciones. No forman parte de la cuenta de práctica
+obligatoria.
 
-## Validación
+## Orden recomendado
 
-La colección incluye un verificador estructural:
+1. Sigue el [índice de la ruta canónica](GENERAL/README.md).
+2. Lee el [plan de estudio](PLAN_ESTUDIO_GENERAL.md).
+3. Usa la [matriz de cobertura](MATRIZ_COBERTURA_TEMARIO.md) para comprobar
+   la correspondencia con el temario.
+4. Resuelve los 52 ejercicios normales.
+5. En una segunda vuelta, resuelve los 8 problemas tipo General.
+
+## Validación reproducible
 
 ```powershell
 python herramientas/validar_material_general.py
 ```
 
-El verificador revisa:
+El verificador distingue la ruta canónica de la biblioteca extendida y exige
+exactamente 26 notebooks, dos ejercicios normales por subsección y no más de
+un problema General por notebook. También revisa JSON, metadatos, títulos,
+salidas de error y recursos locales.
 
-- que cada `.ipynb` sea JSON válido;
-- que no se conserven salidas de error;
-- que no haya celdas de código accidentales;
-- que los recursos locales referenciados existan;
-- que no se acumulen demasiados ejercicios;
-- que no haya múltiples problemas de nivel general por notebook;
-- que no existan duplicados exactos sin identificar.
-
-Consulta también la [auditoría técnica](AUDITORIA_TECNICA.md).
-
-Resultado de la auditoría del 23 de julio de 2026: **52/52 notebooks válidos,
-54 ejercicios en la ruta activa, 8 de nivel General, 0 errores y 0
-advertencias**.
-
-## Animaciones
-
-Las animaciones son material didáctico, no decoración. Deben mostrar el dato o
-perfil inicial antes de evolucionar, mantener textos legibles, evitar
-superposiciones y cerrar indicando qué propiedad matemática se observó.
-
-Los archivos de caché de Manim no deben incluirse en Git. Sólo se conservan
-fuentes y videos finales seleccionados.
-
-Para regenerar las tres animaciones cuya duración fue corregida:
+La estructura canónica se puede reconstruir de forma determinista con:
 
 ```powershell
-python herramientas/regenerar_animaciones_cortas.py
+python herramientas/construir_ruta_canonica.py
 ```
+
+Consulta la [auditoría técnica](AUDITORIA_TECNICA.md) para el alcance y los
+criterios de animación.

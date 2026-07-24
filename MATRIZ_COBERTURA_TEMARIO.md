@@ -1,74 +1,57 @@
 # Matriz de cobertura del temario oficial
 
-La columna **Prioridad** se basa en los exámenes generales disponibles de
-2023-1 a 2026-1, no únicamente en la extensión del programa del curso.
+Cada renglón apunta a un solo notebook canónico. La prioridad se basa en los
+exámenes generales disponibles de 2023-1 a 2026-1.
 
 ## 1. Ecuaciones de primer orden
 
-| Tema oficial | Material principal | Prioridad |
-|---|---|---|
-| Ecuación de transporte | `LINEALES/2.1.1_Transporte_constante (1).ipynb` y `LINEALES/2.1.2_Problema_mixto_y_compatibilidad.ipynb` | Alta |
-| Ecuaciones cuasilineales | `LINEALES/2.3.1_Ecuaciones_cuasilineales_y_sistema_caracteristico.ipynb` | Alta |
-| Ecuaciones no lineales y características | `LINEALES/2.4.1_Ecuaciones_completamente_no_lineales_y_caracteristicas_generalizadas.ipynb` y `LINEALES/2.4.2_Condiciones_de_compatibilidad_y_transversalidad_generalizada.ipynb` | Alta |
-| Leyes de conservación y soluciones débiles | `LINEALES/2.5.1_Soluciones_debiles_y_Rankine_Hugoniot.ipynb` | Alta |
-| Entropía | `LINEALES/2.6.1_Entropia_de_Lax_y_Oleinik.ipynb` | Alta |
-| Problema de Riemann | `LINEALES/2.6.2_Problema_de_Riemann.ipynb` y `LINEALES/2.7.1_Contraccion_L1_existencia_y_unicidad.ipynb` | Alta |
-| Burgers y tráfico LWR | `LINEALES/2.8.1_Burgers_y_modelo_LWR.ipynb` | Alta |
-| Flujo y jacobiano característico | `LINEALES/2.2.2_Flujo_caracteristico_y_formula_de_representacion.ipynb` y `LINEALES/2.2.3_Dependencia_respecto_del_dato_inicial_y_jacobiano_del_flujo.ipynb` | Media |
+| Subsección canónica | Contenido del temario | Prioridad | General |
+|---|---|---|:---:|
+| [`01.01`](GENERAL/01_PRIMER_ORDEN/01.01_Transporte_y_caracteristicas.ipynb) | Transporte y características | Alta | — |
+| [`01.02`](GENERAL/01_PRIMER_ORDEN/01.02_Flujo_caracteristico_y_transversalidad.ipynb) | Flujo, jacobiano y transversalidad | Alta | — |
+| [`01.03`](GENERAL/01_PRIMER_ORDEN/01.03_Cuasilineales_y_perdida_de_regularidad.ipynb) | Cuasilineales y pérdida de regularidad | Alta | ✓ |
+| [`01.04`](GENERAL/01_PRIMER_ORDEN/01.04_No_lineales_y_caracteristicas_generalizadas.ipynb) | No lineales y características generalizadas | Media | — |
+| [`01.05`](GENERAL/01_PRIMER_ORDEN/01.05_Soluciones_debiles_entropia_y_Rankine_Hugoniot.ipynb) | Soluciones débiles, entropía y Rankine–Hugoniot | Alta | — |
+| [`01.06`](GENERAL/01_PRIMER_ORDEN/01.06_Riemann_Burgers_y_LWR.ipynb) | Riemann, Burgers y tráfico LWR | Alta | ✓ |
 
 ## 2. Ecuación de onda
 
-| Tema oficial | Material principal | Prioridad |
-|---|---|---|
-| Onda en una dimensión y Cauchy | `ONDA/02_01_Cauchy_global_y_dAlembert_ejecutado.ipynb` | Alta |
-| Dependencia, influencia y cono de luz | `ONDA/02_02_Dependencia_y_rango_de_influencia_ejecutado.ipynb` y `ONDA/02_02_Dependencia_y_rango_de_influencia (1).ipynb` | Alta |
-| Condiciones de frontera: semirrecta | `ONDA/02_05_Semirrecta_y_metodo_de_reflexion.ipynb` | Media |
-| Condiciones de frontera: intervalo | `ONDA/02_06_Intervalo_extremos_fijos_y_compatibilidad (1).ipynb` | Alta |
-| Problema no homogéneo y Duhamel | `ONDA/02_04_Problema_no_homogeneo_y_Duhamel (1).ipynb` | Media |
-| Onda en dimensiones dos y tres | `ONDA/02_10_Dimension_dos_y_descenso_de_Hadamard (1).ipynb` | Alta |
-| Método de promedios, Huygens y descenso de Hadamard | `ONDA/02_10_Dimension_dos_y_descenso_de_Hadamard (1).ipynb` | Alta |
-| Duhamel multidimensional | `ONDA/02_11_Duhamel_multidimensional_y_auditoria_final (1).ipynb` | Media |
-| Método de energía | `ONDA/02_08_Metodo_de_energia (1).ipynb` | Media |
+| Subsección canónica | Contenido del temario | Prioridad | General |
+|---|---|---|:---:|
+| [`02.01`](GENERAL/02_ONDA/02.01_Cauchy_dAlembert_y_propagacion_finita.ipynb) | Cauchy, d'Alembert y propagación finita | Alta | ✓ |
+| [`02.02`](GENERAL/02_ONDA/02.02_Fronteras_reflexion_y_compatibilidad.ipynb) | Semirrecta, reflexión y compatibilidad | Media | — |
+| [`02.03`](GENERAL/02_ONDA/02.03_Intervalo_separacion_y_Fourier.ipynb) | Intervalo, separación y Fourier | Alta | — |
+| [`02.04`](GENERAL/02_ONDA/02.04_Problema_no_homogeneo_y_Duhamel.ipynb) | Problema no homogéneo y Duhamel | Media | — |
+| [`02.05`](GENERAL/02_ONDA/02.05_Energia_y_unicidad.ipynb) | Energía, conservación y unicidad | Media | — |
+| [`02.06`](GENERAL/02_ONDA/02.06_Ondas_en_Rn_Huygens_y_Hadamard.ipynb) | Dimensiones superiores, Huygens y Hadamard | Alta | ✓ |
 
 ## 3. Ecuaciones elípticas
 
-| Tema oficial | Material principal | Prioridad |
-|---|---|---|
-| Poisson, Laplace y solución fundamental | `lAPLACE/03.1.01_Aplicaciones_y_solucion_fundamental_CORREGIDO.ipynb` | Alta |
-| Propiedad del promedio y subarmonicidad | `lAPLACE/03.2.01_Propiedad_del_promedio_y_subarmonicidad_CORREGIDO.ipynb` y `lAPLACE/Propiedad_del_promedio_Manim_2K_120fps.ipynb` | Alta |
-| Harnack, Liouville, regularidad | `lAPLACE/03.2.02_Harnack_gradiente_analiticidad.ipynb` | Media |
-| Principios del máximo, unicidad y estabilidad | `lAPLACE/03.3.01_Principios_del_maximo_unicidad_estabilidad.ipynb` | Alta |
-| Comparación, sub y supersoluciones | `lAPLACE/03.3.02_Comparacion_sub_y_supersoluciones.ipynb` | Media |
-| Función de Green y fórmula de Poisson | `lAPLACE/03.4.01_Funcion_de_Green_y_formula_de_representacion.ipynb` | Alta |
-| Problema de Dirichlet | `lAPLACE/03.5.01_Problema_de_Dirichlet.ipynb` | Alta |
-| Series de Fourier en el cuadrado | `lAPLACE/03.6.01_Dirichlet_en_cuadrado_series_de_Fourier.ipynb` | Media |
-| Método de Perron | `lAPLACE/03.7.01_Metodo_de_Perron.ipynb` | Alta |
-| Energía y principio de Dirichlet | `lAPLACE/03.8.01_Energia_y_principio_de_Dirichlet.ipynb` | Media |
-| Valores propios y armónicos esféricos | `lAPLACE/03.9.01_Valores_propios_y_armonicos_esfericos.ipynb` | Alta |
-| Aplicaciones físicas | simulaciones 3.1.A-3.1.D del notebook 3.1 | Media |
+| Subsección canónica | Contenido del temario | Prioridad | General |
+|---|---|---|:---:|
+| [`03.01`](GENERAL/03_ELIPTICAS/03.01_Laplace_Poisson_y_solucion_fundamental.ipynb) | Laplace, Poisson y solución fundamental | Alta | — |
+| [`03.02`](GENERAL/03_ELIPTICAS/03.02_Funciones_armonicas_promedio_Harnack_Liouville.ipynb) | Promedio, Harnack, Liouville y regularidad | Alta | — |
+| [`03.03`](GENERAL/03_ELIPTICAS/03.03_Maximo_comparacion_y_unicidad.ipynb) | Máximo, comparación y unicidad | Alta | ✓ |
+| [`03.04`](GENERAL/03_ELIPTICAS/03.04_Green_Poisson_y_representacion.ipynb) | Green, Poisson y representación | Alta | — |
+| [`03.05`](GENERAL/03_ELIPTICAS/03.05_Dirichlet_barreras_y_Perron.ipynb) | Dirichlet, barreras y Perron | Alta | ✓ |
+| [`03.06`](GENERAL/03_ELIPTICAS/03.06_Energia_y_principio_de_Dirichlet.ipynb) | Energía y principio de Dirichlet | Media | — |
+| [`03.07`](GENERAL/03_ELIPTICAS/03.07_Valores_propios_armonicos_esfericos_y_resonancia.ipynb) | Espectro, armónicos esféricos y resonancia | Alta | — |
 
 ## 4. Ecuación del calor
 
-| Tema oficial | Material principal | Prioridad |
-|---|---|---|
-| Solución fundamental | `calor/01_04.01_Solucion_fundamental.ipynb` | Alta |
-| Problemas iniciales y de frontera | `calor/11_04.11_Problemas_iniciales_y_de_frontera.ipynb` | Alta |
-| Series de Fourier en un intervalo | `calor/12_04.12_Series_de_Fourier_en_un_intervalo.ipynb` | Media |
-| Principio débil del máximo | `calor/03_04.03_Principio_debil_del_maximo.ipynb` y `calor/04_04.04_Corolarios_del_principio_debil.ipynb` | Alta |
-| Principio fuerte y unicidad | `calor/05_04.05_Principio_fuerte_del_maximo.ipynb` | Alta |
-| Problema no homogéneo y Duhamel | `calor/07_04.07_Cauchy_no_homogeneo_y_Duhamel.ipynb` | Alta |
-| Regularidad | `calor/08_04.08_Regularidad_I_suavizamiento_por_el_nucleo.ipynb` y `calor/09_04.09_Propiedad_de_las_medias_y_regularidad_interior.ipynb` | Media |
-| No unicidad global | `calor/02_04.02_Soluciones_de_Tychonoff.ipynb` | Consulta |
-| Teorema de Widder | `calor/10_04.10_Teorema_de_Widder.ipynb` | Consulta |
-| Método de energía | `calor/06_04.06_Metodo_de_energia.ipynb` | Media |
+| Subsección canónica | Contenido del temario | Prioridad | General |
+|---|---|---|:---:|
+| [`04.01`](GENERAL/04_CALOR/04.01_Nucleo_del_calor_y_Cauchy_global.ipynb) | Núcleo del calor y Cauchy global | Alta | ✓ |
+| [`04.02`](GENERAL/04_CALOR/04.02_Maximo_comparacion_y_unicidad.ipynb) | Máximo débil, comparación y unicidad | Alta | — |
+| [`04.03`](GENERAL/04_CALOR/04.03_Principio_fuerte_y_positividad.ipynb) | Máximo fuerte y positividad | Alta | — |
+| [`04.04`](GENERAL/04_CALOR/04.04_Problema_no_homogeneo_y_Duhamel.ipynb) | Problema no homogéneo y Duhamel | Alta | — |
+| [`04.05`](GENERAL/04_CALOR/04.05_Frontera_semirrecta_intervalo_y_Fourier.ipynb) | Semirrecta, intervalo y Fourier | Alta | ✓ |
+| [`04.06`](GENERAL/04_CALOR/04.06_Regularidad_y_propiedad_de_las_medias.ipynb) | Suavizamiento, regularidad y medias | Media | — |
+| [`04.07`](GENERAL/04_CALOR/04.07_Tychonoff_y_Widder.ipynb) | Tychonoff y Widder | Consulta | — |
 
-## Criterio de cierre
+## Criterio de cobertura efectiva
 
-Un tema se considera efectivamente cubierto sólo cuando el notebook:
-
-1. enuncia hipótesis y conclusión;
-2. explica la idea de la demostración o la desarrolla;
-3. muestra una interpretación geométrica o física cuando procede;
-4. contiene dos ejercicios normales como máximo;
-5. contiene un problema general sólo si la prioridad es alta;
-6. pasa la validación estructural y no depende de recursos ausentes.
+Un tema cuenta como cubierto cuando su notebook enuncia hipótesis y
+conclusión, presenta la idea central, ofrece interpretación, incluye un
+ejemplo y termina con exactamente dos ejercicios normales. Un problema
+General se añade únicamente en los ocho temas marcados.
