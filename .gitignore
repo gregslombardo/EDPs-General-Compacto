@@ -1,0 +1,15 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+**/__pycache__/
+*.py[cod]
+
+# Manim render cache (conservar únicamente los videos finales seleccionados)
+**/partial_movie_files/
+**/media/Tex/
+**/media/texts/
+
+# Archivos temporales del sistema
+Thumbs.db
+.DS_Store

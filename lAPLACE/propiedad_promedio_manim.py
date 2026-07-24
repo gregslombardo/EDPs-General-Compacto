@@ -84,6 +84,15 @@ def format_decimal(number: float, places: int = 6):
         font_size=34,
     )
 
+
+def safe_title(text: str, font_size: int = 44):
+    """Título centrado con margen lateral garantizado en cualquier render."""
+    title = Text(text, font_size=font_size, weight=BOLD)
+    max_width = config.frame_width - 1.4
+    if title.width > max_width:
+        title.scale_to_fit_width(max_width)
+    return title.to_edge(UP, buff=0.32)
+
 # ============================================================
 # ESCENA 1
 # ============================================================
@@ -96,11 +105,7 @@ class PromedioCircunferencia(Scene):
     """
 
     def construct(self):
-        title = Text(
-            "Propiedad del promedio sobre circunferencias",
-            font_size=48,
-            weight=BOLD,
-        ).to_edge(UP)
+        title = safe_title("Propiedad del promedio sobre circunferencias")
 
         subtitle = MathTex(
             r"\Delta u=0",
@@ -109,8 +114,9 @@ class PromedioCircunferencia(Scene):
             font_size=39,
         ).next_to(title, DOWN, buff=0.22)
 
-        self.play(FadeIn(title, shift=DOWN), Write(subtitle), run_time=3.0)
-        self.wait(2.0)
+        # Cartela inicial legible desde el primer fotograma.
+        self.add(title, subtitle)
+        self.wait(4.0)
 
         plane = NumberPlane(
             x_range=[-2.5, 3.0, 1.0],
@@ -297,19 +303,16 @@ class PromedioDisco(Scene):
     """
 
     def construct(self):
-        title = Text(
-            "Propiedad del promedio sobre discos",
-            font_size=48,
-            weight=BOLD,
-        ).to_edge(UP)
+        title = safe_title("Propiedad del promedio sobre discos")
 
         formula = MathTex(
             r"u(a)=\frac{1}{\pi r^2}\int_{B_r(a)}u(x,y)\,dx\,dy",
             font_size=40,
         ).next_to(title, DOWN, buff=0.22)
 
-        self.play(FadeIn(title, shift=DOWN), Write(formula), run_time=3.0)
-        self.wait(2.0)
+        # Cartela inicial legible desde el primer fotograma.
+        self.add(title, formula)
+        self.wait(4.0)
 
         plane = NumberPlane(
             x_range=[-2.5, 3.0, 1.0],
@@ -455,14 +458,10 @@ class ComparacionArmonicaNoArmonica(Scene):
     """
 
     def construct(self):
-        title = Text(
-            "La hipótesis de harmonicidad es esencial",
-            font_size=48,
-            weight=BOLD,
-        ).to_edge(UP)
+        title = safe_title("La hipótesis de harmonicidad es esencial")
 
-        self.play(FadeIn(title, shift=DOWN), run_time=2.5)
-        self.wait(1.5)
+        self.add(title)
+        self.wait(4.0)
 
         left_panel = make_panel(6.2, 6.2).move_to([-3.35, -0.2, 0.0])
         right_panel = make_panel(6.2, 6.2).move_to([3.35, -0.2, 0.0])
@@ -608,11 +607,7 @@ class ComparacionArmonicaNoArmonica(Scene):
 
 class ResumenPropiedadPromedio(Scene):
     def construct(self):
-        title = Text(
-            "Propiedad del promedio para funciones armónicas",
-            font_size=48,
-            weight=BOLD,
-        ).to_edge(UP)
+        title = safe_title("Propiedad del promedio para funciones armónicas")
 
         hypotheses = VGroup(
             MathTex(r"\Omega\subset\mathbb{R}^n\ \mathrm{abierto}", font_size=36),
@@ -639,7 +634,8 @@ class ResumenPropiedadPromedio(Scene):
             font_size=30,
         ).to_edge(DOWN)
 
-        self.play(FadeIn(title, shift=DOWN), run_time=2.5)
+        self.add(title)
+        self.wait(4.0)
         self.play(LaggedStart(*[Write(m) for m in hypotheses], lag_ratio=0.25), run_time=4.0)
         self.wait(2.0)
         self.play(Write(sphere), run_time=3.0)
