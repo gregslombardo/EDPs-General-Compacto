@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/105572743_3017143925_223132457.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_1471063735_3099296392.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_3877907558_3081990570.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_1183991174_3246448221.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_3877907558_4180859314.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_3806674501_2965891507.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_3877907558_2972698593.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_4054882318_896228323.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/lAPLACE/media_propiedad_promedio/videos/propiedad_promedio_manim/1440p120/partial_movie_files/ResumenPropiedadPromedio/1590991911_780317800_903363428.mp4'

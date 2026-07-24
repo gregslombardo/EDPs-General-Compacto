@@ -1,0 +1,132 @@
+# Cola de prompts subsecuentes
+
+Cada prompt está diseñado para generar **un notebook**. No combinar varios prompts en una sola entrega.
+
+---
+
+## Prompt 02 — 2.1.2 Problema mixto y compatibilidad
+
+Usa como fuente principal la página 2 de `Ecuacione Lineales De Primer Orden.pdf` y conserva literalmente la notación y el orden de las notas. Crea el notebook `2.1.2_Problema_mixto_y_compatibilidad.ipynb`. Transcribe y numera la formulación del problema mixto
+\[
+u_t+a u_x=0,\quad u(x,0)=u_0(x),\quad u(0,t)=g(t),
+\]
+la división del dominio por \(x=at\) y la solución por partes. Añade como complementos separados las condiciones de compatibilidad
+\[
+g(0)=u_0(0),\qquad g'(0)=-a u_0'(0).
+\]
+Incluye una animación Manim 2K, 120 fps, TeX real, robusta para Windows/MiKTeX, que coloree las regiones determinadas por datos iniciales y de frontera. Añade ejercicios tipo Examen General y revisión final del temario.
+
+---
+
+## Prompt 03 — 2.1.3 Principio de balance y localización
+
+Usa las páginas 2–3. Transcribe el principio universal de balance, la forma integral y la forma diferencial. Separa rigurosamente la ley de balance
+\[
+u_t+\nabla\cdot F=g
+\]
+de la ley de conservación \(g=0\). Incluye el teorema de localización con hipótesis precisas y demostración. Agrega una visualización de volumen de control, flujo normal y fuente. Termina con ejercicios tipo general.
+
+---
+
+## Prompt 04 — 2.2.1 Transporte en \(\mathbb R^d\), campos y fuentes
+
+Usa las páginas 3–4. Transcribe el transporte de una concentración por un campo de velocidades, las variables densidad, concentración y flujo convectivo. Organiza el caso
+\[
+u_t+a\cdot\nabla u=0
+\]
+con \(a\) constante y el caso
+\[
+u_t+a(x,t)\cdot\nabla u=g(x,t).
+\]
+Añade la fórmula característica con fuente, existencia local de las curvas y ejemplos. Visualiza trayectorias 2D y transporte de una densidad; usa GPU sólo si el barrido lo justifica.
+
+---
+
+## Prompt 05 — 2.2.2 Transporte no lineal y Burgers clásico
+
+Usa la página 5. Transcribe literalmente el problema
+\[
+u_t+u u_x=0,\qquad u(x,0)=f(x),
+\]
+la ley de conservación con flujo \(f(u)=u^2/2\), el sistema característico y la superficie solución. Añade la fórmula implícita, el mapa \(\xi\mapsto \xi+t f(\xi)\), el criterio de invertibilidad y el tiempo de ruptura. Incluye una simulación de cruce de características y formación de choque.
+
+---
+
+## Prompt 06 — 2.3.1 Sistema característico cuasilineal
+
+Usa la página 6. Transcribe la ecuación
+\[
+a(x,y,u)u_x+b(x,y,u)u_y=c(x,y,u),
+\]
+la clasificación lineal/semilineal/cuasilineal, la curva inicial y el sistema característico tridimensional. Numera todas las definiciones y lemas. Añade una visualización 3D de la superficie solución generada por características.
+
+---
+
+## Prompt 07 — 2.3.2 Transversalidad y existencia local
+
+Usa la página 7. Transcribe la condición de transversalidad, el determinante correspondiente y el teorema de existencia local. Completa las hipótesis de regularidad/Lipschitz sin alterar el enunciado original: colócalas como complemento. Explica los casos sin solución, solución única e infinitas soluciones cuando la curva inicial es característica. Incluye ejercicios cercanos al examen 2026-1.
+
+---
+
+## Prompt 08 — 2.4.1 Ecuaciones completamente no lineales y Charpit
+
+Usa la página 8. Transcribe el sistema característico general para
+\[
+F(x,y,u,p,q)=0,
+\qquad p=u_x,\quad q=u_y.
+\]
+Deriva cuidadosamente las ecuaciones de Charpit y la condición de transversalidad generalizada. Separa texto literal y complementos. Añade un ejemplo completamente resuelto y una visualización de la variedad característica.
+
+---
+
+## Prompt 09 — 2.4.2 Hamilton–Jacobi y eikonal
+
+Usa las páginas 8–9 y completa las lagunas del temario. Presenta Hamilton–Jacobi
+\[
+u_t+H(t,x,\nabla u)=0
+\]
+y su sistema hamiltoniano. Añade la ecuación eikonal, interpretación óptica, características y ejemplos radiales. Incluye una simulación de frentes de nivel y rayos.
+
+---
+
+## Prompt 10 — 2.5.1 Soluciones débiles y Rankine–Hugoniot
+
+Usa la página 10. Transcribe la definición de solución débil para
+\[
+u_t+f(u)_x=0,
+\]
+con funciones de prueba. Deriva rigurosamente Rankine–Hugoniot tanto en forma geométrica como para un frente \(x=s(t)\). Incluye animación de un salto móvil y balance sobre una caja espacio-temporal.
+
+---
+
+## Prompt 11 — 2.6.1 Entropía de Lax y Oleinik
+
+Usa las páginas 10–11. Transcribe la condición de entropía de Lax, el caso convexo y la condición de Oleinik. Demuestra sus relaciones bajo convexidad estricta. Incluye contraejemplos de soluciones débiles no entrópicas y una visualización de compresión frente a expansión.
+
+---
+
+## Prompt 12 — 2.7.1 Contracción \(L^1\), existencia y unicidad
+
+Usa la página 11. Transcribe el teorema de contracción \(L^1\). Completa con una formulación rigurosa para soluciones entrópicas y explica por qué implica unicidad. Añade una demostración guiada al nivel del examen, sin pasos mágicos, y una comparación numérica de dos soluciones.
+
+---
+
+## Prompt 13 — 2.6.2 Problema de Riemann
+
+Usa la página 12. Transcribe literalmente el teorema para flujo estrictamente convexo. Separa los casos \(u_L>u_R\) y \(u_L<u_R\), choque y rarefacción. Deriva la velocidad
+\[
+\sigma=\frac{f(u_R)-f(u_L)}{u_R-u_L}
+\]
+y la rarefacción autosimilar. Incluye animación comparativa y ejercicios tipo examen.
+
+---
+
+## Prompt 14 — 2.8.1 Burgers y modelo LWR
+
+Usa las notas, el temario oficial y los exámenes históricos. Construye aplicaciones completas a Burgers y al modelo de tráfico LWR. Incluye interpretación física, flujos cóncavos/convexos, choques, rarefacciones, interacción de ondas y solución de datos por tramos. Usa una simulación de alta resolución; CUDA puede emplearse para barridos o muchos escenarios.
+
+---
+
+## Prompt 15 — Apéndice A.1 Flujos y grupos de Lie
+
+Usa la página 13. Transcribe el material de campos invariantes, flujos globales y mapa exponencial. Organízalo como apéndice, no como núcleo del examen. Añade sólo los complementos indispensables para conectar con el flujo característico.

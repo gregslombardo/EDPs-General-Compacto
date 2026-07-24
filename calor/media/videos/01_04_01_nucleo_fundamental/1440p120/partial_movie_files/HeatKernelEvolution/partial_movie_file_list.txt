@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/2615618811_1325552289_223132457.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_2792366416_2238674864.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_16041532_4031676931.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_1825899279_858848437.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_3503981599_298601852.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_1686583594_2836847170.mp4'
+file 'file:C:/Users/Grego/OneDrive/Documentos/GitHub/EDPs/calor/media/videos/01_04_01_nucleo_fundamental/1440p120/partial_movie_files/HeatKernelEvolution/3324369293_1825899279_1837045311.mp4'
