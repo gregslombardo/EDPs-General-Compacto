@@ -4,6 +4,10 @@
 subsección del temario con núcleo teórico, interpretación, ejemplo guiado y
 exactamente dos ejercicios normales.
 
+Antes de los ejercicios, usa el
+[`FORMULARIO_MEMORIZACION.md`](../FORMULARIO_MEMORIZACION.md) para reconstruir
+las fórmulas, sistemas característicos e interpretaciones esenciales.
+
 | Bloque | Subsecciones | Normales | General |
 |---|---:|---:|---:|
 | [Primer orden](#1-primer-orden) | 6 | 12 | 2 |

@@ -21,11 +21,13 @@ obligatoria.
 ## Orden recomendado
 
 1. Sigue el [índice de la ruta canónica](GENERAL/README.md).
-2. Lee el [plan de estudio](PLAN_ESTUDIO_GENERAL.md).
-3. Usa la [matriz de cobertura](MATRIZ_COBERTURA_TEMARIO.md) para comprobar
+2. Memoriza y reconstruye el
+   [formulario de fórmulas principales](FORMULARIO_MEMORIZACION.md).
+3. Lee el [plan de estudio](PLAN_ESTUDIO_GENERAL.md).
+4. Usa la [matriz de cobertura](MATRIZ_COBERTURA_TEMARIO.md) para comprobar
    la correspondencia con el temario.
-4. Resuelve los 52 ejercicios normales.
-5. En una segunda vuelta, resuelve los 8 problemas tipo General.
+5. Resuelve los 52 ejercicios normales.
+6. En una segunda vuelta, resuelve los 8 problemas tipo General.
 
 ## Validación reproducible
 
