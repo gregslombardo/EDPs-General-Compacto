@@ -287,22 +287,66 @@ superposición.""",
         "slug": "Problema_no_homogeneo_y_Duhamel",
         "title": "Problema no homogéneo y principio de Duhamel",
         "priority": "MEDIA",
-        "history": "Duhamel conecta las versiones no homogéneas en una y varias dimensiones.",
-        "core": r"""Para
+        "history": "No apareció directamente para onda en los cinco generales revisados; el calor no homogéneo de 2025-2 sí requiere una estrategia análoga de levantamiento, Fourier y Duhamel.",
+        "core": r"""### 1. Separación de los tres mecanismos
+
+Para
 \[
-u_{tt}-c^2u_{xx}=F(x,t),\qquad u(\cdot,0)=u_t(\cdot,0)=0,
+u_{tt}-c^2u_{xx}=F(x,t),\qquad u(x,0)=f(x),\quad u_t(x,0)=g(x),
 \]
-Duhamel superpone soluciones homogéneas creadas en cada tiempo \(s\):
+la solución se separa como
 \[
-u(x,t)=\frac1{2c}\int_0^t\int_{x-c(t-s)}^{x+c(t-s)}
+u(t)=C(t)f+S(t)g+\int_0^tS(t-s)F(s)\,ds.
+\]
+Aquí \(C(t)f\) propaga el desplazamiento, \(S(t)g\) propaga la velocidad y
+el último término acumula las ondas creadas por la fuerza. El tiempo de
+propagación de la emisión producida en \(s\) es \(t-s\), no \(t\).
+
+### 2. Fórmula completa en la recta
+
+Al sustituir la fórmula de d'Alembert para \(S(t-s)\), resulta
+\[
+u(x,t)=\frac{f(x-ct)+f(x+ct)}2
++\frac1{2c}\int_{x-ct}^{x+ct}g(y)\,dy
++\frac1{2c}\int_0^t\int_{x-c(t-s)}^{x+c(t-s)}
 F(y,s)\,dy\,ds.
 \]
-Con datos no nulos se suma la solución de d'Alembert.""",
-        "visual": r"""Cada punto de la fuerza emite una onda elemental. Sólo contribuyen los
-puntos del soporte de \(F\) contenidos en el cono pasado de \((x,t)\).""",
-        "example": r"""Para \(F(x,t)=e^{-t}\cos(kx)\), se usa la identidad trigonométrica
-en la integral espacial y queda una integral temporal escalar con frecuencia
-\(ck\).""",
+La integral forzada tiene datos iniciales nulos. Bajo regularidad suficiente,
+derivar respecto de \(t\) muestra que satisface la ecuación y que el término
+del extremo superior recupera exactamente \(F(x,t)\).
+
+### 3. Soporte y causalidad
+
+Un punto \((y,s)\) sólo puede influir en \((x,t)\) si
+\[
+0\le s\le t,\qquad |x-y|\le c(t-s).
+\]
+Por tanto, si \(F(\cdot,s)\) está soportada en \([-a,a]\), la respuesta
+forzada se anula cuando \(|x|>a+ct\). Esta conclusión se obtiene de la
+geometría antes de calcular la integral.""",
+        "visual": r"""Duhamel convierte una fuerza continua en una familia de impulsos
+temporales. Cada corte \(F(\cdot,s)\,ds\) nace en el tiempo \(s\), abre su
+propio cono futuro y llega a \((x,t)\) sólo si el punto de emisión pertenece
+al cono pasado del observador. La solución es la superposición de todos esos
+aportes, no una sola onda emitida en \(t=0\).""",
+        "media": "../../ONDA/media/videos/1080p60/duhamel_acumula_fuentes.mp4",
+        "example": r"""Toma \(f=g=0\), \(F(x,t)=e^{-t}\cos(kx)\), con
+\(k\ne0\), y
+\(\omega=ck\). Primero,
+\[
+\int_{x-c(t-s)}^{x+c(t-s)}\cos(ky)\,dy
+=\frac{2}{k}\cos(kx)\sin\!\bigl(\omega(t-s)\bigr).
+\]
+Entonces \(u(x,t)=A(t)\cos(kx)\), donde
+\[
+A(t)=\frac1{\omega}\int_0^t e^{-s}\sin\!\bigl(\omega(t-s)\bigr)\,ds
+=\frac{e^{-t}-\cos(\omega t)+\omega^{-1}\sin(\omega t)}
+{1+\omega^2}.
+\]
+Se verifica \(A(0)=A'(0)=0\) y
+\(A''+\omega^2A=e^{-t}\); por ello
+\(u_{tt}-c^2u_{xx}=e^{-t}\cos(kx)\). Este cierre por una ODE modal es una
+forma rápida de comprobar la integral.""",
         "exercises": [
             r"""Reduce explícitamente la fórmula de Duhamel para \(F=e^{-t}\cos(kx)\) y verifica la ecuación.""",
             r"""Si \(F\) está soportada en \(|x|\le a,\ 0\le t\le T\), describe una región donde la respuesta forzada es cero.""",
@@ -314,22 +358,82 @@ en la integral espacial y queda una integral temporal escalar con frecuencia
         "slug": "Energia_y_unicidad",
         "title": "Método de energía, conservación y unicidad",
         "priority": "MEDIA",
-        "history": "La energía es una herramienta de demostración transversal del temario.",
-        "core": r"""Para una solución en \([0,L]\),
+        "history": "No apareció directamente para onda en los cinco generales revisados; el argumento energético elíptico sí aparece implícitamente en 2025-1.",
+        "core": r"""### 1. Ley local de conservación
+
+Para \(u_{tt}-c^2u_{xx}=F\), define
+\[
+e(x,t)=\frac12\left(u_t^2+c^2u_x^2\right).
+\]
+Multiplicar la ecuación por \(u_t\) y reagrupar da
+\[
+\partial_t e-\partial_x(c^2u_xu_t)=Fu_t.
+\]
+Así, la densidad de energía cambia por el flujo espacial y por el trabajo de
+la fuerza.
+
+### 2. Balance en un intervalo
+
+En \([0,L]\),
 \[
 E(t)=\frac12\int_0^L(u_t^2+c^2u_x^2)\,dx.
 \]
-Multiplicar la ecuación por \(u_t\) e integrar da
+Integrando la ley local,
 \[
 E'(t)=c^2[u_xu_t]_0^L+\int_0^L Fu_t\,dx.
 \]
-Con frontera homogénea y \(F=0\), \(E\) se conserva. Aplicada a la diferencia
-de dos soluciones, la identidad prueba unicidad.""",
-        "visual": r"""La energía interior cambia por potencia inyectada en la frontera y por el
-trabajo de la fuerza. No debe eliminarse el término de frontera sin justificar
-las condiciones impuestas.""",
-        "example": r"""Si \(u(0,t)=u(L,t)=0\), entonces \(u_t=0\) en los extremos y el flujo
-de energía \(c^2u_xu_t\) se anula.""",
+El término de borde se anula con Dirichlet homogénea
+\((u=0\Rightarrow u_t=0)\), Neumann homogénea \((u_x=0)\) o periodicidad
+(los flujos de ambos extremos se cancelan). Si \(F=0\), \(E\) se conserva.
+
+### 3. Unicidad, estabilidad y fuerza
+
+Para dos soluciones, \(w=u-v\) satisface el problema homogéneo con energía
+inicial cero; conservación implica \(w_t=w_x=0\) y los datos fijan la
+constante restante. Con fuerza,
+\[
+E'(t)\le \|F(t)\|_{L^2}\sqrt{2E(t)},\qquad
+\sqrt{E(t)}\le\sqrt{E(0)}
++\frac1{\sqrt2}\int_0^t\|F(s)\|_{L^2}\,ds.
+\]
+
+### 4. Energía en conos
+
+Fijado un vértice \((x_0,T)\), integra \(e\) en el intervalo decreciente
+\[
+I_t=[x_0-c(T-t),\,x_0+c(T-t)].
+\]
+Para \(F=0\), al derivar aparecen dos cuadrados no positivos:
+\[
+\frac d{dt}\int_{I_t}e\,dx
+=-\frac c2(u_t+cu_x)^2\big|_{\text{izq}}
+-\frac c2(u_t-cu_x)^2\big|_{\text{der}}\le0.
+\]
+Si la energía inicial dentro de la base del cono es cero, también lo es en
+el vértice. Ésta es la prueba energética de propagación finita.""",
+        "visual": r"""La mitad \(u_t^2/2\) es energía cinética y
+\(c^2u_x^2/2\) es energía elástica. Pueden intercambiarse mientras la onda
+oscila, pero su suma sólo cambia si una fuerza trabaja sobre la cuerda o si
+fluye potencia por la frontera. En un cono, los cuadrados de las variables
+viajeras \(u_t\pm cu_x\) miden la energía que cruza cada lado.""",
+        "figure": "../../figuras/02.05_balance_energia_cono.svg",
+        "figure_alt": "Balance global de energía y energía localizada en un cono pasado",
+        "figure_caption": "A la izquierda, intercambio cinético-elástico y flujo de frontera; a la derecha, el argumento local que prueba propagación finita.",
+        "example": r"""Supón \(F=0\) y \(u(0,t)=u(L,t)=0\). Entonces
+\[
+\int_0^L u_tu_{tt}\,dx
+=c^2\int_0^L u_tu_{xx}\,dx
+=c^2[u_tu_x]_0^L-c^2\int_0^L u_{tx}u_x\,dx.
+\]
+Como el dato de Dirichlet es constante en el tiempo,
+\(u_t(0,t)=u_t(L,t)=0\); el término de borde desaparece. Los dos términos
+restantes son
+\[
+\frac d{dt}\frac12\int_0^Lu_t^2\,dx
++\frac d{dt}\frac{c^2}{2}\int_0^Lu_x^2\,dx=0.
+\]
+No basta escribir “frontera homogénea”: hay que indicar qué factor del flujo
+se anula.""",
         "exercises": [
             r"""Deriva cuidadosamente la identidad de energía en \([0,L]\) e indica dónde se usa cada condición de frontera.""",
             r"""Aplica la energía a \(w=u-v\) para demostrar unicidad con los mismos datos iniciales y de frontera.""",
@@ -341,18 +445,95 @@ de energía \(c^2u_xu_t\) se anula.""",
         "slug": "Ondas_en_Rn_Huygens_y_Hadamard",
         "title": "Ondas en dimensiones superiores, Huygens y descenso de Hadamard",
         "priority": "ALTA",
-        "history": "Poisson/Huygens apareció en 2023-1 y ondas esféricas en 2025-2.",
-        "core": r"""En \(\mathbb R^3\), Kirchhoff promedia datos sobre la esfera
-\(|y-x|=ct\); en \(\mathbb R^2\), Poisson integra sobre todo el disco
-\(|y-x|<ct\) con peso \((c^2t^2-|y-x|^2)^{-1/2}\). El descenso de Hadamard
-obtiene la fórmula bidimensional a partir de la tridimensional usando datos
-independientes de una coordenada.""",
-        "visual": r"""En dimensión tres la señal ideal viaja sobre el frente esférico (Huygens
-fuerte). En dimensión dos queda una cola dentro del cono: el observador puede
-seguir registrando señal después de pasar el frente.""",
-        "media": "../../ONDA/animaciones/videos/1440p60/ParalelogramoCaracteristico.mp4",
-        "example": r"""Para una onda radial 3D, \(v(r,t)=ru(r,t)\) satisface la ecuación
-de onda 1D; se aplica d'Alembert a \(v\) y luego se divide entre \(r\).""",
+        "history": "Poisson/Huygens apareció en 2023-1, la comparación entre dimensiones en 2023-2 y las ondas esféricas en 2025-2.",
+        "core": r"""### 1. Promedios esféricos y fórmula de Kirchhoff en \(\mathbb R^3\)
+
+Sea
+\[
+M_rh(x)=\frac1{4\pi r^2}\int_{|y-x|=r}h(y)\,dS_y.
+\]
+Para \(u_{tt}-c^2\Delta u=0\), \(u(x,0)=f(x)\), \(u_t(x,0)=g(x)\),
+\[
+u(x,t)=\partial_t\!\left[tM_{ct}f(x)\right]+tM_{ct}g(x).
+\]
+Equivalentemente, sólo intervienen los datos sobre la esfera
+\(|y-x|=ct\). Antes de usar la fórmula se debe identificar cuál término
+lleva la derivada temporal.
+
+### 2. Fórmula de Poisson en \(\mathbb R^2\)
+
+En dos dimensiones,
+\[
+u(x,t)=\partial_t\!\left[
+\frac1{2\pi c}\int_{|y-x|<ct}
+\frac{f(y)}{\sqrt{c^2t^2-|y-x|^2}}\,dy\right]
++\frac1{2\pi c}\int_{|y-x|<ct}
+\frac{g(y)}{\sqrt{c^2t^2-|y-x|^2}}\,dy.
+\]
+Ahora contribuye todo el disco, con un peso integrable que aumenta cerca del
+frente.
+
+### 3. Descenso de Hadamard
+
+Para obtener la fórmula 2D, extiende \(f(x_1,x_2)\) y \(g(x_1,x_2)\) a
+\(\mathbb R^3\) haciéndolos independientes de \(x_3\). Al proyectar la esfera
+de radio \(R=ct\) sobre el disco, para cada punto con
+\(r=|y-x|<R\) aparecen dos alturas
+\[
+z=\pm\sqrt{R^2-r^2},
+\]
+y el elemento de superficie proyectado aporta
+\[
+\frac{2R}{\sqrt{R^2-r^2}}\,dy.
+\]
+Al insertarlo en Kirchhoff aparece exactamente el núcleo de Poisson.
+
+### 4. Huygens y propagación finita
+
+Datos compactos sólo influyen dentro del cono \(\operatorname{dist}(x,K)\le
+ct\), en cualquier dimensión. La afirmación fuerte de Huygens es más
+precisa: después de que el frente abandona al observador no queda cola. Se
+cumple en dimensiones espaciales impares \(n\ge3\), pero falla en dimensión
+dos. En dimensión uno, el término de velocidad de d'Alembert integra un
+intervalo y también puede dejar cola.
+
+### 5. Ondas radiales tridimensionales
+
+Si \(u=u(r,t)\), entonces
+\[
+\Delta u=u_{rr}+\frac2r u_r,\qquad v(r,t)=ru(r,t)
+\quad\Longrightarrow\quad v_{tt}-c^2v_{rr}=0.
+\]
+La regularidad en el origen exige \(v(0,t)=0\); por ello los datos de \(v\)
+se extienden imparmente a la recta antes de aplicar d'Alembert.""",
+        "visual": r"""Kirchhoff observa únicamente una cáscara esférica:
+un pulso localizado llega y se va. Poisson observa el disco completo:
+tras la llegada del frente, puntos interiores continúan aportando y producen
+una cola. El descenso de Hadamard explica geométricamente esa cola: al
+proyectar la esfera tridimensional, dos alturas se acumulan sobre cada punto
+del disco con mayor densidad cerca del borde.""",
+        "figure": "../../figuras/02.06_huygens_2d_3d.svg",
+        "figure_alt": "Comparación de la cáscara de Kirchhoff en tres dimensiones con el disco de Poisson en dos dimensiones",
+        "figure_caption": "La velocidad de propagación es finita en ambos casos; la diferencia es si queda o no una cola después del frente.",
+        "example": r"""**Modelo 2025-2: onda esférica.** Con
+\(v=ru\), resuelve en la recta
+\[
+v(r,t)=\frac{v_0(r-ct)+v_0(r+ct)}2
++\frac1{2c}\int_{r-ct}^{r+ct}v_1(s)\,ds,
+\]
+usando extensiones impares \(v_0(r)=rf(r)\) y \(v_1(r)=rg(r)\); finalmente
+\(u(r,t)=v(r,t)/r\), tomando el límite en \(r=0\).
+
+**Modelo 2023-1: Poisson en 2D.** Si \(c=1\), \(f=0\) y
+\(g(y)=|y|^2\), escribe \(y=x+z\). Por simetría el término
+\(2x\cdot z\) integra cero y
+\[
+u(x,t)=\frac1{2\pi}\int_{|z|<t}
+\frac{|x+z|^2}{\sqrt{t^2-|z|^2}}\,dz
+=t|x|^2+\frac23t^3.
+\]
+Entonces \(u(x,0)=0\), \(u_t(x,0)=|x|^2\) y
+\(u_{tt}-\Delta u=4t-4t=0\).""",
         "exercises": [
             r"""Justifica mediante descenso de Hadamard el núcleo \((c^2t^2-r^2)^{-1/2}\) y especifica el intervalo de la coordenada adicional.""",
             r"""Para datos compactamente soportados, compara el soporte permitido por las fórmulas en \(\mathbb R^2\) y \(\mathbb R^3\).""",
@@ -806,6 +987,20 @@ def make_notebook(section: dict) -> dict:
                 "metadata": {},
                 "source": (
                     "## Visualización\n\n" + video_cell(section["media"])
+                ).splitlines(keepends=True),
+            }
+        )
+    if section.get("figure"):
+        caption = section.get("figure_caption", "")
+        figure_markdown = f"![{section.get('figure_alt', 'Visualización del concepto')}]({section['figure']})"
+        if caption:
+            figure_markdown += f"\n\n> {caption}"
+        cells.append(
+            {
+                "cell_type": "markdown",
+                "metadata": {},
+                "source": (
+                    "## Visualización de apoyo\n\n" + figure_markdown
                 ).splitlines(keepends=True),
             }
         )
