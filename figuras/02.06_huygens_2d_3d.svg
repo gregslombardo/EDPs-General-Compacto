@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Principio de Huygens en tres y dos dimensiones</title>
+  <desc id="desc">Comparación entre una señal concentrada en una cáscara esférica en tres dimensiones y una señal con cola dentro del disco en dos dimensiones.</desc>
+  <defs>
+    <radialGradient id="tail">
+      <stop offset="0" stop-color="#2a78b8" stop-opacity=".22"/>
+      <stop offset=".72" stop-color="#2a78b8" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#1261a0" stop-opacity=".78"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#153552}
+      .head{font:700 25px Arial,sans-serif;fill:#165d91}
+      .body{font:20px Arial,sans-serif;fill:#203448}
+      .small{font:18px Arial,sans-serif;fill:#4c6478}
+      .formula{font:italic 22px Georgia,serif;fill:#173b57}
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <text x="600" y="48" text-anchor="middle" class="title">Misma velocidad finita, distinta memoria detrás del frente</text>
+
+  <rect x="35" y="80" width="545" height="560" rx="22" fill="#f7fbff" stroke="#bfd3e3" stroke-width="2"/>
+  <text x="307" y="124" text-anchor="middle" class="head">3D — Kirchhoff: cáscara esférica</text>
+  <ellipse cx="307" cy="340" rx="190" ry="92" fill="none" stroke="#b9d7eb" stroke-width="3" stroke-dasharray="9 8"/>
+  <ellipse cx="307" cy="340" rx="190" ry="190" fill="none" stroke="#1d78b5" stroke-width="15" opacity=".82" filter="url(#glow)"/>
+  <ellipse cx="307" cy="340" rx="190" ry="92" fill="none" stroke="#1261a0" stroke-width="7"/>
+  <path d="M117 340 C150 270 464 270 497 340" fill="none" stroke="#6eaed4" stroke-width="4"/>
+  <circle cx="307" cy="340" r="7" fill="#d88b12"/>
+  <text x="307" y="558" text-anchor="middle" class="formula">|y − x| = ct</text>
+  <text x="307" y="590" text-anchor="middle" class="body">Llega el frente y después se apaga.</text>
+  <text x="307" y="617" text-anchor="middle" class="small">Huygens fuerte: no queda cola ideal.</text>
+
+  <rect x="620" y="80" width="545" height="560" rx="22" fill="#f7fbff" stroke="#bfd3e3" stroke-width="2"/>
+  <text x="892" y="124" text-anchor="middle" class="head">2D — Poisson: disco completo</text>
+  <circle cx="892" cy="340" r="190" fill="url(#tail)" stroke="#1261a0" stroke-width="8"/>
+  <circle cx="892" cy="340" r="138" fill="none" stroke="#fff" stroke-opacity=".50" stroke-width="3"/>
+  <circle cx="892" cy="340" r="84" fill="none" stroke="#fff" stroke-opacity=".42" stroke-width="3"/>
+  <circle cx="892" cy="340" r="7" fill="#d88b12"/>
+  <path d="M760 213 L803 258" stroke="#a86c00" stroke-width="4"/>
+  <text x="700" y="200" class="small">peso mayor</text>
+  <text x="700" y="224" class="small">cerca del frente</text>
+  <text x="892" y="558" text-anchor="middle" class="formula">|y − x| &lt; ct</text>
+  <text x="892" y="590" text-anchor="middle" class="body">El interior continúa contribuyendo.</text>
+  <text x="892" y="617" text-anchor="middle" class="small">Falla Huygens fuerte: aparece una cola.</text>
+
+  <path d="M567 340 L608 340" stroke="#778b9b" stroke-width="4"/>
+  <text x="600" y="674" text-anchor="middle" class="small">La proyección de la esfera en el descenso de Hadamard llena el disco.</text>
+</svg>
